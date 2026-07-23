@@ -68,7 +68,7 @@ Posts published to the Cloudflare site are cross-posted to Substack for discover
 
 ## Agent Workflow (Hermes)
 
-Hermes is a local agent running on a home MLX setup, using Gemma 4 27B for writing and conversational tasks. The intended workflow:
+Hermes is a local agent running on a home MLX setup, using Gemma 4 31B for writing and conversational tasks. The intended workflow:
 
 1. A rough idea, voice note, or brain dump is handed to Hermes
 2. Hermes structures it, preserves voice, outputs a formatted markdown post
