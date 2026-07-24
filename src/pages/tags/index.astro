@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTags } from '../../lib/posts';
+
+const tags = await getTags();
+---
+
+<BaseLayout title="Topics">
+  <a href="/" class="back-link">← All posts</a>
+  <h1>Topics</h1>
+  {
+    tags.length === 0 ? (
+      <p style="color:var(--fg-muted)">No tags yet.</p>
+    ) : (
+      <div class="tags" style="margin-top:1.5rem">
+        {tags.map(({ tag, count }) => (
+          <a class="tag" href={`/tags/${tag}`}>
+            #{tag} ({count})
+          </a>
+        ))}
+      </div>
+    )
+  }
+</BaseLayout>

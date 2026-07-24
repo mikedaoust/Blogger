@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { getPublishedPosts } from '../lib/posts';
+import { SITE } from '../config';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout>
+  <p class="lede">{SITE.description}</p>
+
+  {
+    posts.length === 0 ? (
+      <p style="margin-top:2rem;color:var(--fg-muted)">
+        No posts yet. Drop a markdown file in <code>/posts</code> to publish.
+      </p>
+    ) : (
+      <ul class="post-list" style="margin-top:2.5rem">
+        {posts.map((post) => (
+          <li>
+            <p class="post-meta">
+              <FormattedDate date={post.data.pubDate} />
+              {post.data.draft && <span>· draft</span>}
+            </p>
+            <h2>
+              <a href={`/posts/${post.id}`}>{post.data.title}</a>
+            </h2>
+            <p class="excerpt">{post.data.description}</p>
+            {post.data.tags.length > 0 && (
+              <div class="tags" style="margin-top:0.5rem">
+                {post.data.tags.map((t) => (
+                  <a class="tag" href={`/tags/${t}`}>#{t}</a>
+                ))}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</BaseLayout>

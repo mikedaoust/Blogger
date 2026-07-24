@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About">
+  <a href="/" class="back-link">← All posts</a>
+  <div class="prose">
+    <h1>About</h1>
+    <p>
+      This is a working notebook for building agentic systems, tuning local
+      LLMs, and figuring out what serious human–AI collaboration actually looks
+      like from the inside. Practitioner notes, not thought leadership.
+    </p>
+
+    <h2>What you'll find here</h2>
+    <ul>
+      <li>
+        <strong>Agentic AI &amp; SOC</strong> — architecture, failure modes, and
+        real findings from a multi-agent security system running against a home
+        network. Documented as it's built, including the failures.
+      </li>
+      <li>
+        <strong>Local LLM tuning</strong> — parameters, DFlash configs, KV-cache
+        quantization, and which models actually earn their disk space for which
+        tasks.
+      </li>
+      <li>
+        <strong>AI personas, memory &amp; continuity</strong> — what it takes
+        for an agent to stay itself across sessions.
+      </li>
+    </ul>
+
+    <h2>Colophon</h2>
+    <p>
+      Posts are markdown, version-controlled, and the source of truth. The site
+      is built with <a href="https://astro.build">Astro</a> and deployed to
+      Cloudflare Pages. Content is cross-posted to Substack for discovery, with
+      this site as canonical.
+    </p>
+  </div>
+</BaseLayout>

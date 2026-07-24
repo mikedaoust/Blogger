@@ -1,0 +1,39 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, tags } = post.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <a href="/" class="back-link">← All posts</a>
+
+  <article>
+    <header>
+      <h1>{title}</h1>
+      <p class="post-meta">
+        <FormattedDate date={pubDate} />
+        {updatedDate && <span>· updated <FormattedDate date={updatedDate} /></span>}
+      </p>
+      {
+        tags.length > 0 && (
+          <div class="tags" style="margin-top:0.6rem">
+            {tags.map((t) => (
+              <a class="tag" href={`/tags/${t}`}>#{t}</a>
+            ))}
+          </div>
+        )
+      }
+    </header>
+
+    <div class="prose" style="margin-top:2rem">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
