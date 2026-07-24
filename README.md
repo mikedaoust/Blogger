@@ -54,13 +54,18 @@ Rough idea / brain dump
   Cross-post to Substack (manual or automated)
 ```
 
-### GitHub Actions Deploy
+### Cloudflare Pages (Git integration)
 
-On merge to `main`, the deploy workflow builds the Astro site and pushes to Cloudflare Pages. Configuration in `.github/workflows/deploy.yml`.
+Deploys are handled by Cloudflare Pages' native Git integration, not a GitHub Action. Cloudflare watches the repo and, on every push, builds the Astro site on its own infrastructure and deploys:
 
-Required secrets:
-- `CLOUDFLARE_API_TOKEN`
-- `CLOUDFLARE_ACCOUNT_ID`
+- Push to `main` → production deploy
+- Push to any other branch (e.g. `drafts`) → automatic preview deployment with its own URL, so a post can be reviewed exactly as it'll render before merge
+
+Build settings (in the Cloudflare dashboard):
+- Build command: `npm run build`
+- Build output directory: `dist`
+
+No repo secrets are required for deploys. A manual-only reference workflow is kept at `.github/workflows/deploy.yml` as an adaptable GitHub Actions example (e.g. for future Substack cross-posting); it does not run on push.
 
 ### Substack Cross-Posting
 

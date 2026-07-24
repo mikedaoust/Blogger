@@ -1,9 +1,14 @@
+# NOTE: Deploys are handled by Cloudflare Pages' native Git integration
+# (Cloudflare builds + deploys on every push, with automatic branch previews).
+# This workflow no longer runs on push — it's retained as a working, adaptable
+# reference (checkout → node → build → authenticated Cloudflare call via
+# secrets) for future automation such as Substack cross-posting. To re-enable
+# Action-based deploys instead, restore the `push: branches: [main]` trigger
+# below and remove the Cloudflare Git integration.
 name: Deploy to Cloudflare Pages
 
 on:
-  push:
-    branches: [main]
-  # Allow manual re-deploys from the Actions tab.
+  # Manual-only: does not fire automatically. Run from the Actions tab if needed.
   workflow_dispatch:
 
 # Prevent overlapping deploys; let the newest win.
