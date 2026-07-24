@@ -3,11 +3,10 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
-// Update `site` to your production URL once Cloudflare Pages assigns it
-// (e.g. https://blogger.pages.dev or your custom domain). It powers the
-// sitemap, RSS feed, and any absolute URLs.
+// Production URL. Powers the sitemap, RSS feed, and any absolute URLs.
+// Update this if you later add a custom domain.
 export default defineConfig({
-  site: 'https://blogger.pages.dev',
+  site: 'https://blogger.turbozmike.workers.dev',
   integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {

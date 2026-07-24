@@ -5,8 +5,8 @@ export const SITE = {
   description:
     'Notes from building agentic systems, tuning local LLMs, and working seriously with AI.',
   author: 'Michael',
-  // Set to your production origin once known (also update `site` in astro.config.mjs).
-  url: 'https://blogger.pages.dev',
+  // Production origin (also set as `site` in astro.config.mjs).
+  url: 'https://blogger.turbozmike.workers.dev',
 };
 
 // Header navigation links.
