@@ -6,7 +6,7 @@ export const SITE = {
     'Notes from building agentic systems, tuning local LLMs, and working seriously with AI.',
   author: 'Michael',
   // Production origin (also set as `site` in astro.config.mjs).
-  url: 'https://blogger.turbozmike.workers.dev',
+  url: 'https://technicallyoverrated.com',
 };
 
 // Header navigation links.

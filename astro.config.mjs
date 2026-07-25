@@ -4,9 +4,8 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 // Production URL. Powers the sitemap, RSS feed, and any absolute URLs.
-// Update this if you later add a custom domain.
 export default defineConfig({
-  site: 'https://blogger.turbozmike.workers.dev',
+  site: 'https://technicallyoverrated.com',
   integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {
