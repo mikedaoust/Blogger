@@ -85,7 +85,7 @@ Hermes is a local agent running on a home MLX setup, using Gemma 4 31B for writi
 
 Every post merged to `main` is a training example. Over time the git history becomes a corpus Hermes can reference — "here are the posts that passed review, match this register." The approval process is also the voice training process.
 
-The goal is a writing voice that is direct, technically grounded, and honest — engineer-facing, without marketing language. Posts should read like a practitioner thinking out loud, not a thought leader performing expertise.
+The goal is a writing voice that is direct, technically grounded, honest and maybe a little snarky — engineer-facing, without marketing language or hype. Posts should read like a practitioner thinking out loud, not a thought leader performing expertise.
 
 ## Content Focus
 
