@@ -9,6 +9,11 @@ interface Props {
 
 const { title, description = SITE.description } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
+
+// Canonical URL: the site is reachable at several hostnames (apex, www, the
+// *.workers.dev URL). Point search engines at the apex to avoid duplicate
+// content. Built from SITE.url + the current path.
+const canonicalURL = new URL(Astro.url.pathname, SITE.url).href;
 ---
 
 <!doctype html>
@@ -20,6 +25,8 @@ const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
