@@ -1,5 +1,5 @@
 ---
-title: "SOCFU: I Didn't Write a Strategy Doc, I Built a Security Team"
+title: 'I Built an Agentic Cybersecurity Team Because I Got Tired of Waiting for One'
 description: 'A side-project agentic cybersecurity team that reviews real security evidence, produces auditable findings, and hands the important work to humans — augmentation, not replacement.'
 pubDate: 2026-06-09
 tags: ['socfu', 'agentic-ai', 'security']
