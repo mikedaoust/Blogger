@@ -1,4 +1,10 @@
-# **My AI SOC Manager Earned Its Keep. The Debate Round Didn’t.**
+---
+title: 'My AI SOC Manager Earned Its Keep. The Debate Round Didn’t'
+description: 'A side-project agentic cybersecurity team that reviews real security evidence, produces auditable findings, and hands the important work to humans — augmentation, not replacement.'
+pubDate: 2026-08-07
+tags: ['socfu', 'agentic-ai', 'security']
+draft: false
+---
 
 A few weeks ago, I wrote about a failure inside SOCFU, the agentic cybersecurity team I’m building on my own time. An analyst noticed a real threat, rationalized it away, and the manager accepted the conclusion without challenging the reasoning.
 
