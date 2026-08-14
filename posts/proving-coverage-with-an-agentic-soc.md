@@ -56,7 +56,6 @@ Coverage in an agentic SOC is likely a function of four things:
 4. **Change control — Can you prove what changed and when?**  
    Keep the simulation content, seeded events, expected outcomes, and evaluation results version-controlled. If the model, prompt, orchestration, or platform changes, rerun the same tests.
 
+That gives you something durable even when the underlying detection implementation is not. You can change models. You can change vendors. You can change orchestration layers. The validation corpus remains yours, and you can run it against whatever comes next.
 
 ### **In an agentic SOC, the portable security content may no longer be the detection rule. It may be the test.**
-
-You can change models. You can change vendors. You can change orchestration layers. The validation corpus remains yours, and you can run it against whatever comes next.
